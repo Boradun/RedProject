@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div>Привет @User.Identity.Name</div>
+    <div>@Html.ActionLink("Выйти", "LogOff", "Auth")</div>
+}
+else
+{
+    <div>
+        @Html.ActionLink("Войти", "Auth", "Auth")
+    </div>
+    <div>
+        @Html.ActionLink("Зарегестрироваться", "Register", "Auth")
+    </div>
+}
+
+
